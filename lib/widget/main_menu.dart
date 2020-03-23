@@ -9,7 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:kritproduct/utility/models/user_model.dart';
 import 'package:kritproduct/utility/my_style.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:kritproduct/widget/test_webview.dart';
+// import 'package:url_launcher/url_launcher.dart';
 // import 'package:kritproduct/widget/funtype.dart';
 import 'package:kritproduct/widget/menu_sub2.dart';
 
@@ -74,9 +75,14 @@ class _MenusState extends State<Menus> {
 
   Widget menuApps() {
     return OutlineButton(
-        onPressed: webApps,
+        // onPressed: webApps,
+        onPressed: () {
+          MaterialPageRoute route =
+              MaterialPageRoute(builder: (value) => TestWebView());
+          Navigator.of(context).push(route);
+        },
         child: Stack(
-          children: <Widget>[       
+          children: <Widget>[
             Align(alignment: Alignment.topLeft, child: Icon(Icons.graphic_eq)),
             Align(
                 alignment: Alignment(0.0, -0.1),
@@ -206,7 +212,7 @@ class _MenusState extends State<Menus> {
 
   Widget menuContract() {
     return OutlineButton(
-        onPressed: () => launch("tel://022666697"), //webContract,
+        // onPressed: () => launch("tel://022666697"), //webContract,
 
         child: Stack(
           children: <Widget>[
@@ -263,9 +269,8 @@ class _MenusState extends State<Menus> {
   }
 
   Widget menuMarketing() {
-    return OutlineButton( 
-           onPressed: funmenu,
-
+    return OutlineButton(
+        onPressed: funmenu,
         child: Stack(
           children: <Widget>[
             Align(
@@ -294,11 +299,9 @@ class _MenusState extends State<Menus> {
             borderRadius: new BorderRadius.circular(50.0)));
   }
 
-
- Widget indexMarketing() {
-    return OutlineButton( 
-           onPressed: setindex,
-
+  Widget indexMarketing() {
+    return OutlineButton(
+        onPressed: setindex,
         child: Stack(
           children: <Widget>[
             Align(
@@ -327,121 +330,113 @@ class _MenusState extends State<Menus> {
             borderRadius: new BorderRadius.circular(50.0)));
   }
 
-
-
-
   //call programe type onPress โดยใช้ onPress
-  Future<void> funmenu() async  {
-             
-            MaterialPageRoute materialPageRoute =
-                MaterialPageRoute(builder: (BuildContext buildContext) {
-              return Menusub2();
-            });
-                Navigator.of(context).push(materialPageRoute);
-   
-
+  Future<void> funmenu() async {
+    MaterialPageRoute materialPageRoute =
+        MaterialPageRoute(builder: (BuildContext buildContext) {
+      return Menusub2();
+    });
+    Navigator.of(context).push(materialPageRoute);
   }
 
-
- 
   webApps() async {
-    const url = 'https://m.wealthrepublic.co.th';
+    // const url = 'https://m.wealthrepublic.co.th';
 
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      // iOS
-      const url = 'https://m.wealthrepublic.co.th';
-      if (await canLaunch(url)) {
-        await launch(url);
-      } else {
-        throw 'Could not launch $url';
-      }
-    }
+    // if (await canLaunch(url)) {
+    //   await launch(url);
+    // } else {
+    //   // iOS
+    //   const url = 'https://m.wealthrepublic.co.th';
+    //   if (await canLaunch(url)) {
+    //     await launch(url);
+    //   } else {
+    //     throw 'Could not launch $url';
+    //   }
+    // }
   }
 
 //---------------เว็บ บริษัท
   webCompany() async {
-    const url = 'http://wealthrepublic.co.th';
+    // const url = 'http://wealthrepublic.co.th';
 
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      // iOS
-      const url = 'http://wealthrepublic.co.th';
-      if (await canLaunch(url)) {
-        await launch(url);
-      } else {
-        throw 'Could not launch $url';
-      }
-    }
+    // if (await canLaunch(url)) {
+    //   await launch(url);
+    // } else {
+    //   // iOS
+    //   const url = 'http://wealthrepublic.co.th';
+    //   if (await canLaunch(url)) {
+    //     await launch(url);
+    //   } else {
+    //     throw 'Could not launch $url';
+    //   }
+    // }
   }
 
   webContract() async {
-    const url = 'http://wealthrepublic.co.th/contact.html';
+    // const url = 'http://wealthrepublic.co.th/contact.html';
 
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      // iOS
-      const url = 'http://wealthrepublic.co.th/contact.html';
-      if (await canLaunch(url)) {
-        await launch(url);
-      } else {
-        throw 'Could not launch $url';
-      }
-    }
+    // if (await canLaunch(url)) {
+    //   await launch(url);
+    // } else {
+    //   // iOS
+    //   const url = 'http://wealthrepublic.co.th/contact.html';
+    //   if (await canLaunch(url)) {
+    //     await launch(url);
+    //   } else {
+    //     throw 'Could not launch $url';
+    //   }
+    // }
   }
 
   webFacebook() async {
-    const url = 'https://www.facebook.com/wealthrepublic';
+    // const url = 'https://www.facebook.com/wealthrepublic';
 
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      // iOS
-      const url = 'https://www.facebook.com/wealthrepublic';
-      if (await canLaunch(url)) {
-        await launch(url);
-      } else {
-        throw 'Could not launch $url';
-      }
-    }
+    // if (await canLaunch(url)) {
+    //   await launch(url);
+    // } else {
+    //   // iOS
+    //   const url = 'https://www.facebook.com/wealthrepublic';
+    //   if (await canLaunch(url)) {
+    //     await launch(url);
+    //   } else {
+    //     throw 'Could not launch $url';
+    //   }
+    // }
   }
 
   webNews() async {
-    const url = 'http://wealthrepublic.co.th/news.html';
+    // const url = 'http://wealthrepublic.co.th/news.html';
 
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      // iOS
-      const url = 'http://wealthrepublic.co.th/news.html';
-      if (await canLaunch(url)) {
-        await launch(url);
-      } else {
-        throw 'Could not launch $url';
-      }
-    }
+    // if (await canLaunch(url)) {
+    //   await launch(url);
+    // } else {
+    //   // iOS
+    //   const url = 'http://wealthrepublic.co.th/news.html';
+    //   if (await canLaunch(url)) {
+    //     await launch(url);
+    //   } else {
+    //     throw 'Could not launch $url';
+    //   }
+    // }
   }
 
   setindex() async {
-    const url = 'https://marketdata.set.or.th/mkt/sectorialindices.do?language=th&country=TH';
+    // const url =
+    //     'https://marketdata.set.or.th/mkt/sectorialindices.do?language=th&country=TH';
 
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      // iOS
-      const url = 'https://marketdata.set.or.th/mkt/sectorialindices.do?language=th&country=TH';
-      if (await canLaunch(url)) {
-        await launch(url);
-      } else {
-        throw 'Could not launch $url';
-      }
-    }
+    // if (await canLaunch(url)) {
+    //   await launch(url);
+    // } else {
+    //   // iOS
+    //   const url =
+    //       'https://marketdata.set.or.th/mkt/sectorialindices.do?language=th&country=TH';
+    //   if (await canLaunch(url)) {
+    //     await launch(url);
+    //   } else {
+    //     throw 'Could not launch $url';
+    //   }
+    // }
   }
-
- 
 
   //แสดงชื่อให้อยู่ในบรรทัดเดียวกัน
   Widget showName() {

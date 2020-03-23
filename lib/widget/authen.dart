@@ -7,7 +7,7 @@ import 'package:kritproduct/utility/normal_dialog.dart';
 import 'package:kritproduct/widget/main_menu.dart';
 import 'package:kritproduct/widget/register.dart';
 // import 'package:kritproduct/widget/funtype.dart';
-import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart';
 //import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 //เวลาสร้าง Library ใหม่ ต้องมา Import ไว้ด้านบนด้วย เพื่อต้องการเรียกใช้งาน
@@ -271,36 +271,36 @@ class _AuthenState extends State<Authen> {
 
  
  webApi() async {
-    const url = 'http://wealthrepublic.co.th';
+    // const url = 'http://wealthrepublic.co.th';
 
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      // iOS
-      const url = 'http://wealthrepublic.co.th';
-      if (await canLaunch(url)) {
-        await launch(url);
-      } else {
-        throw 'Could not launch $url';
-      }
-    }
+    // if (await canLaunch(url)) {
+    //   await launch(url);
+    // } else {
+    //   // iOS
+    //   const url = 'http://wealthrepublic.co.th';
+    //   if (await canLaunch(url)) {
+    //     await launch(url);
+    //   } else {
+    //     throw 'Could not launch $url';
+    //   }
+    // }
   }
 
 
  webopenMap() async {
-    // Android
-    const url = 'geo:52.32,4.917';
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      // iOS
-      const url = 'https://maps.apple.com/?ll=52.32,4.917';
-      if (await canLaunch(url)) {
-        await launch(url);
-      } else {
-        throw 'Could not launch $url';
-      }
-    }
+    // // Android
+    // const url = 'geo:52.32,4.917';
+    // if (await canLaunch(url)) {
+    //   await launch(url);
+    // } else {
+    //   // iOS
+    //   const url = 'https://maps.apple.com/?ll=52.32,4.917';
+    //   if (await canLaunch(url)) {
+    //     await launch(url);
+    //   } else {
+    //     throw 'Could not launch $url';
+    //   }
+    // }
   }
 
 
